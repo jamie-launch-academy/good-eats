@@ -1,14 +1,3 @@
 <h2>Add a review:</h2>
-<%= form_for [@restaurant, @review] do |f| %>
-<p>
-  <%= f.label :rating %><br>
-  <%= f.text_field :rating %>
-</p>
-<p>
-  <%= f.label :comment %><br>
-  <%= f.text_area :comment %>
-</p>
-<p>
-  <%= f.submit %>
-</p>
-<% end %>
+
+<%= render 'form2' %>

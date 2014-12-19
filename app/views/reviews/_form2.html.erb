@@ -1,0 +1,25 @@
+<%= form_for [@restaurant, @review] do |f| %>
+
+<% if @review.errors.any? %>
+<div id="error_explanation">
+  <h3>Please correct the following <%= pluralize(@review.errors.count, "error") %>:</h3>
+  <ul>
+    <% @review.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<p>
+  <%= f.label :rating %><br>
+  <%= f.text_field :rating %>
+</p>
+<p>
+  <%= f.label :comment %><br>
+  <%= f.text_area :comment %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
