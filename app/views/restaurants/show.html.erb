@@ -1,0 +1,53 @@
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @restaurant.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @restaurant.state %>
+</p>
+
+<p>
+  <strong>Zip Code:</strong>
+  <%= @restaurant.postal_code %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @restaurant.description %>
+</p>
+
+
+<%= link_to 'Write a review', new_restaurant_review_path(@restaurant)  %>
+
+<table>
+  <tr>
+    <strong>Reviews:</strong>
+  </tr>
+
+  <tr>
+    <td><%= "rating" %> </td>
+    <td><%= "review" %> </td>
+  </tr>
+
+    <% @restaurant.reviews.each do |review| %>
+  <tr>
+    <td><%= review.rating %> </td>
+    <td><%= review.comment %> </td>
+  </tr>
+  <% end %>
+</p>
+</table>
+
+<%= link_to 'Back to all restaurants', controller: 'restaurants' %>

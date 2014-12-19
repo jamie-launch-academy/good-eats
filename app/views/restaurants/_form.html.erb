@@ -1,0 +1,47 @@
+<%= form_for :restaurant, url: restaurants_path do |f| %>
+
+<% if @restaurant.errors.any? %>
+<div id="error_explanation">
+  <h3>Please correct the following <%= pluralize(@restaurant.errors.count, "error") %>:</h3>
+  <ul>
+    <% @restaurant.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<p>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+</p>
+
+<p>
+  <%= f.label :address %><br>
+  <%= f.text_field :address %>
+</p>
+
+<p>
+  <%= f.label :city %><br>
+  <%= f.text_field :city %>
+</p>
+
+<p>
+  <%= f.label :state %><br>
+  <%= f.text_field :state %>
+</p>
+
+<p>
+  <%= f.label :postal_code %><br>
+  <%= f.text_field :postal_code %>
+</p>
+
+<p>
+  <%= f.label :description %><br>
+  <%= f.text_area :description %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
